@@ -7,6 +7,7 @@
 height = 144.0
 
 [node name="Laser" type="Area2D"]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_w6dwh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,3 +19,9 @@ texture = ExtResource("2_3jgan")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -129)
 shape = SubResource("CapsuleShape2D_fr02o")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -130)
+scale = Vector2(1, 5.33333)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

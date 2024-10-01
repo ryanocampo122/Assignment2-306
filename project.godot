@@ -38,6 +38,13 @@ shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player "
+2d_physics/layer_3="asteroids"
+2d_physics/layer_4="projectile"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.000354853, 3.65132e-05, 1.46039e-05, 1)

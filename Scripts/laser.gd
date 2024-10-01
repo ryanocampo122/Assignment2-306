@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed := 500
+@export var speed := 1000
 @export var movement_vector := Vector2(0, -1)
 
 # Called when the node enters the scene tree for the first time.
@@ -13,4 +13,9 @@ func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	global_position += movement_vector * speed * delta
+	global_position += movement_vector.rotated(rotation) * speed * delta
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	print('Deleting' + name)
+	queue_free()
