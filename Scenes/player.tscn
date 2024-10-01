@@ -22,15 +22,20 @@ size = Vector2(229.383, 312.703)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_38fru")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -2)
+position = Vector2(5.71429, -1.42857)
 scale = Vector2(0.730143, 0.755495)
 texture = ExtResource("2_d3org")
 script = SubResource("GDScript_ylt7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-12.0273, 5.15309)
+position = Vector2(-1.42857, 1.42857)
 scale = Vector2(0.730142, 0.755495)
 shape = SubResource("RectangleShape2D_5mss7")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(-2.85714, -121.429)

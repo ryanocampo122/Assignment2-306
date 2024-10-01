@@ -8,6 +8,8 @@ height = 144.0
 
 [node name="Laser" type="Area2D"]
 scale = Vector2(0.6, 0.6)
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_w6dwh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

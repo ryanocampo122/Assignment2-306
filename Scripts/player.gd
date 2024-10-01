@@ -1,8 +1,20 @@
 extends CharacterBody2D
 
+signal laser_shot(laser)
+
 @export var acceleration := 10
 @export var max_speed := 450
 @export var rotation_speed := 250
+@export var recoil_force := 300
+
+@onready var muzzle = $Muzzle
+
+var laser_scene = preload("res://Scenes/laser.tscn")
+
+#input event for shooting laser
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("shoot"):
+		shoot_laser()
 
 func _physics_process(delta: float) -> void:
 	# Limit the speed of the player to prevent infinite acceleration
@@ -33,3 +45,13 @@ func _physics_process(delta: float) -> void:
 		global_position.x = screen_size.x
 	elif global_position.x > screen_size.x:
 		global_position.x = 0
+
+func shoot_laser():
+	var l = laser_scene.instantiate()
+	l.global_position = muzzle.global_position
+	l.rotation = rotation 
+	emit_signal("laser_shot", l)
+	
+	# Apply backward force (recoil) when shooting
+	var recoil_vector = Vector2(0, recoil_force).rotated(rotation)
+	velocity = recoil_vector  # Apply force in the opposite direction of the shot

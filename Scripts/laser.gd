@@ -7,7 +7,6 @@ extends Area2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -15,7 +14,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	global_position += movement_vector.rotated(rotation) * speed * delta
 
-
+#when bullet exits the scene, delete the laser 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	print('Deleting' + name)
 	queue_free()
