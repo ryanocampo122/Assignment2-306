@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://drjoxbjclaepa"]
+[gd_scene load_steps=3 format=3 uid="uid://drjoxbjclaepa"]
+
+[ext_resource type="Texture2D" uid="uid://bwb02juphvmth" path="res://Assets/space_ships/TM_1.png" id="1_kv4np"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mss7"]
+size = Vector2(411.188, 169.982)
 
 [node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.226695, 0.311798)
+texture = ExtResource("1_kv4np")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(-4.76837e-07, 1.6036)
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_5mss7")
