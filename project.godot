@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Assignment2"
+run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.000354853, 3.65132e-05, 1.46039e-05, 1)
