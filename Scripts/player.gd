@@ -8,6 +8,7 @@ signal laser_shot(laser)
 @export var recoil_force := 300
 
 @onready var muzzle = $Muzzle
+@onready var audio_player = $AudioStreamPlayer2D  # Reference to the AudioStreamPlayer node
 
 var laser_scene = preload("res://Scenes/laser.tscn")
 
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("rotate_left"):
 		rotate(deg_to_rad(-rotation_speed * delta))
 		
-	# Gradually slow down the player if no input is detected (drifting effect)
+	# Gradually slow down the player if no input is detected 
 	velocity = velocity.move_toward(Vector2.ZERO, 3)
 	
 	# Move and handle collisions
@@ -52,6 +53,9 @@ func shoot_laser():
 	l.rotation = rotation 
 	emit_signal("laser_shot", l)
 	
+
+	audio_player.play()
+
 	# Apply backward force (recoil) when shooting
 	var recoil_vector = Vector2(0, recoil_force).rotated(rotation)
-	velocity = recoil_vector  # Apply force in the opposite direction of the shot
+	velocity = recoil_vector
