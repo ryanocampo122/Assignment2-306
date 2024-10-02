@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hp86r"]
 radius = 105.0
-height = 214.0
+height = 276.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -40,5 +40,5 @@ position = Vector2(-2.85714, -121.429)
 stream = ExtResource("3_70gji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_hp86r")

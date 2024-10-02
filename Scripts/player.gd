@@ -48,12 +48,13 @@ func _physics_process(delta: float) -> void:
 		global_position.x = 0
 
 func shoot_laser():
-	var l = laser_scene.instantiate()
-	l.global_position = muzzle.global_position
+	var l = laser_scene.instantiate()           #create new laser object
+	l.global_position = muzzle.global_position  #set position of laser to posiiton of muzzle
 	l.rotation = rotation 
-	emit_signal("laser_shot", l)
 	
-
+	#notify other parts of code that event (laser fire) has occured
+	emit_signal("laser_shot", l)               
+	
 	audio_player.play()
 
 	# Apply backward force (recoil) when shooting

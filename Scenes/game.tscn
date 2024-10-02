@@ -26,3 +26,4 @@ position = Vector2(1025, 573)
 [node name="Laser" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="." instance=ExtResource("4_kym0u")]
+position = Vector2(477, 279)
