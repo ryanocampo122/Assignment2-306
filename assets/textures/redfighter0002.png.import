@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu1vtilqshfsu"
-path="res://.godot/imported/meteorGrey_med2.png-45570a9af37798dcfb0ebe5c752ec54d.ctex"
+uid="uid://udx22n0q6nw7"
+path="res://.godot/imported/redfighter0002.png-67e921e76c94fd2c29a9ebdafcca658c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/meteorGrey_med2.png"
-dest_files=["res://.godot/imported/meteorGrey_med2.png-45570a9af37798dcfb0ebe5c752ec54d.ctex"]
+source_file="res://assets/textures/redfighter0002.png"
+dest_files=["res://.godot/imported/redfighter0002.png-67e921e76c94fd2c29a9ebdafcca658c.ctex"]
 
 [params]
 

@@ -5,7 +5,8 @@ signal died
 
 @export var acceleration := 10.0
 @export var max_speed := 350.0
-@export var rotation_speed := 250.0
+@export var rotation_speed := 350.0
+@export var recoil_strength = 20.0
 
 @onready var muzzle = $Muzzle
 @onready var sprite = $Sprite2D
@@ -31,21 +32,25 @@ func _process(delta):
 func _physics_process(delta):
 	if !alive: return
 	
-	var input_vector := Vector2(0, Input.get_axis("move_forward", "move_backward"))
+	# No forward/backward movement, just rotation
+	var input_vector := Vector2.ZERO
 	
-	velocity += input_vector.rotated(rotation) * acceleration
 	velocity = velocity.limit_length(max_speed)
 	
+	# Handle rotation
 	if Input.is_action_pressed("rotate_right"):
-		rotate(deg_to_rad(rotation_speed*delta))
+		rotate(deg_to_rad(rotation_speed * delta))
 	if Input.is_action_pressed("rotate_left"):
-		rotate(deg_to_rad(-rotation_speed*delta))
+		rotate(deg_to_rad(-rotation_speed * delta))
 	
-	if input_vector.y == 0:
-		velocity = velocity.move_toward(Vector2.ZERO, 3)
+	# Gradually slow down when there's no input
+	if velocity.length() > 0:
+		velocity = velocity.move_toward(Vector2.ZERO, 10 * delta)
 	
+	# Move player
 	move_and_slide()
-	
+
+	# Screen wrapping logic
 	var screen_size = get_viewport_rect().size
 	if global_position.y < 0:
 		global_position.y = screen_size.y
@@ -56,11 +61,17 @@ func _physics_process(delta):
 	elif global_position.x > screen_size.x:
 		global_position.x = 0
 
+# Laser shooting with recoil mechanic
 func shoot_laser():
 	var l = laser_scene.instantiate()
 	l.global_position = muzzle.global_position
 	l.rotation = rotation
 	emit_signal("laser_shot", l)
+	
+	# Recoil force opposite to the shooting direction
+	var recoil_force = Vector2(0, -1).rotated(rotation) * recoil_strength
+	velocity -= recoil_force
+
 
 func die():
 	if alive==true:

@@ -1,54 +1,58 @@
-[gd_scene load_steps=13 format=3 uid="uid://7f1k0tsx7cnx"]
+[gd_scene load_steps=14 format=3 uid="uid://7f1k0tsx7cnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ci0lx"]
 [ext_resource type="PackedScene" uid="uid://1wnfmblulhx0" path="res://scenes/player.tscn" id="1_lp7mr"]
 [ext_resource type="PackedScene" uid="uid://cyg1avbtmwoj7" path="res://scenes/hud.tscn" id="2_g7hwg"]
+[ext_resource type="Texture2D" uid="uid://bur81k74ku370" path="res://assets/textures/Scene-3.jpg" id="2_r5hb3"]
 [ext_resource type="PackedScene" uid="uid://bh1r82178c2u1" path="res://scenes/asteroid.tscn" id="3_6btt6"]
 [ext_resource type="PackedScene" uid="uid://dwwjje64opjab" path="res://scenes/game_over_screen.tscn" id="3_km7re"]
 [ext_resource type="PackedScene" uid="uid://bxpqhkwbma8la" path="res://scenes/player_spawn_area.tscn" id="6_kp4kv"]
-[ext_resource type="AudioStream" uid="uid://d3r58unnfcojo" path="res://assets/audio/sfx_laser1.wav" id="7_ymdea"]
-[ext_resource type="AudioStream" uid="uid://yu1ff4h0rwa2" path="res://assets/audio/hit.wav" id="8_p30em"]
-[ext_resource type="AudioStream" uid="uid://ddiy12b6ukf4n" path="res://assets/audio/explode.wav" id="9_x64l8"]
+[ext_resource type="AudioStream" uid="uid://ck5yudtb8s054" path="res://assets/audio/sfx_laser1.wav" id="7_ymdea"]
+[ext_resource type="AudioStream" uid="uid://c60lymk20geng" path="res://assets/audio/hit.wav" id="8_p30em"]
+[ext_resource type="AudioStream" uid="uid://dcmdym76082h2" path="res://assets/audio/explode.wav" id="9_x64l8"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ya6y"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(1, 360, 1)
-particle_flag_disable_z = true
 spread = 0.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = -10.0
 initial_velocity_max = -10.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 0, 0)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qn0gc"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(1, 360, 1)
-particle_flag_disable_z = true
 spread = 0.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = -20.0
 initial_velocity_max = -20.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 0, 0)
 scale_min = 3.0
 scale_max = 3.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ws6fu"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(1, 360, 1)
-particle_flag_disable_z = true
 spread = 0.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = -30.0
 initial_velocity_max = -30.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 0, 0)
 scale_min = 5.0
 scale_max = 5.0
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ci0lx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 2.0
+offset_right = 2734.0
+offset_bottom = 1536.0
+texture = ExtResource("2_r5hb3")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -88,19 +92,19 @@ preprocess = 280.0
 [node name="Asteroids" type="Node" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("3_6btt6")]
-position = Vector2(396, 244)
+position = Vector2(373, -134)
 
 [node name="Asteroid2" parent="Asteroids" instance=ExtResource("3_6btt6")]
-position = Vector2(987, 111)
+position = Vector2(1027, -72)
 
 [node name="Asteroid3" parent="Asteroids" instance=ExtResource("3_6btt6")]
-position = Vector2(1033, 445)
+position = Vector2(1242, 778)
 
 [node name="Asteroid4" parent="Asteroids" instance=ExtResource("3_6btt6")]
-position = Vector2(263, 615)
+position = Vector2(226, 747)
 
 [node name="Asteroid5" parent="Asteroids" instance=ExtResource("3_6btt6")]
-position = Vector2(143, 107)
+position = Vector2(-53, 140)
 
 [node name="PlayerSpawnPos" type="Node2D" parent="."]
 position = Vector2(640, 360)
