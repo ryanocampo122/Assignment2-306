@@ -6,7 +6,7 @@ signal died
 @export var acceleration := 10.0
 @export var max_speed := 350.0
 @export var rotation_speed := 350.0
-@export var recoil_strength = 20.0
+@export var recoil_strength = 35.0
 
 @onready var muzzle = $Muzzle
 @onready var sprite = $Sprite2D
@@ -15,7 +15,7 @@ signal died
 var laser_scene = preload("res://scenes/laser.tscn")
 
 var shoot_cd = false
-var rate_of_fire = 0.15
+var rate_of_fire = 0.20
 
 var alive := true
 
@@ -71,20 +71,3 @@ func shoot_laser():
 	# Recoil force opposite to the shooting direction
 	var recoil_force = Vector2(0, -1).rotated(rotation) * recoil_strength
 	velocity -= recoil_force
-
-
-func die():
-	if alive==true:
-		alive = false
-		sprite.visible = false
-		cshape.set_deferred("disabled", true)
-		emit_signal("died")
-		
-
-func respawn(pos):
-	if alive==false:
-		alive = true
-		global_position = pos
-		velocity = Vector2.ZERO
-		sprite.visible = true
-		cshape.set_deferred("disabled", false)
