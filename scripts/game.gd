@@ -5,6 +5,8 @@ extends Node2D
 @onready var asteroids = $Asteroids
 @onready var asteroid_respawn_timer = $AsteroidRespawnTimer
 
+var velocity := Vector2.ZERO
+
 var asteroid_scene = preload("res://scenes/asteroid.tscn")
 
 func _ready():

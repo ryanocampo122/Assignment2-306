@@ -4,6 +4,7 @@ signal exploded(pos, size)
 
 var movement_vector := Vector2(0, -1)
 
+
 enum AsteroidSize{LARGE, MEDIUM, SMALL}
 @export var size := AsteroidSize.LARGE
 
@@ -46,3 +47,16 @@ func _physics_process(delta):
 func explode():
 	emit_signal("exploded", global_position, size)
 	queue_free()
+
+
+func _on_body_entered(body):
+	if body is CharacterBody2D:
+		# Calculate the normal vector based on the collision point
+		var normal_vector = (body.global_position - global_position).normalized()
+		
+		# Reflect the asteroid's movement vector using the normal
+		movement_vector = movement_vector.bounce(normal_vector)
+		
+		# Apply a force to the player to reflect their velocity
+		var reflection_force = normal_vector * 300  
+		body.velocity += reflection_force

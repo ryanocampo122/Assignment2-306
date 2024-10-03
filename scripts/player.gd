@@ -71,3 +71,15 @@ func shoot_laser():
 	# Recoil force opposite to the shooting direction
 	var recoil_force = Vector2(0, -1).rotated(rotation) * recoil_strength
 	velocity -= recoil_force
+	
+func _on_body_entered(body):
+	if body is Asteroid:
+		# Calculate the normal vector based on the collision point
+		var normal_vector = (body.global_position - global_position).normalized()
+		
+		# Reflect the player's velocity using the normal
+		velocity = velocity.bounce(normal_vector)
+		
+		# Apply a force to the asteroid to reflect its movement vector
+		var reflection_force = normal_vector * 300
+		body.movement_vector += reflection_force
