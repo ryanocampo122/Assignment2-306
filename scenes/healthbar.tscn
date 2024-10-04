@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://bchh760ug2e73"]
+
+[ext_resource type="Script" path="res://scripts/healthbar.gd" id="1_5d2m1"]
+[ext_resource type="Texture2D" uid="uid://bkmmmffkba3jm" path="res://assets/textures/HP/Borders/itsmars Health Orb/itsmars_orb_shadow.png" id="2_8030f"]
+[ext_resource type="Texture2D" uid="uid://cqfcvqyx7xpcj" path="res://assets/textures/HP/Borders/itsmars Health Orb/itsmars_orb_back1.png" id="3_caba2"]
+[ext_resource type="Texture2D" uid="uid://cc253rtxk0q8e" path="res://assets/textures/HP/Borders/itsmars_orb_border.png" id="4_samgg"]
+[ext_resource type="Texture2D" uid="uid://do1xskjqg7jrv" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Divider/spaceships.png" id="4_v1ryy"]
+[ext_resource type="Texture2D" uid="uid://bbpd167prx78y" path="res://assets/textures/HP/Borders/Border_Black.png" id="5_xphbj"]
+[ext_resource type="Texture2D" uid="uid://cc24hyhqtl4vv" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent border/panel-transparent-border-024.png" id="6_yki01"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5m67"]
+bg_color = Color(0.0255833, 0.00724714, 0.0155105, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aknvl"]
+bg_color = Color(0.584314, 0, 0, 1)
+
+[node name="Healthbar" type="ProgressBar"]
+z_index = 1
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 147.0
+offset_bottom = 132.0
+theme_override_styles/background = SubResource("StyleBoxFlat_v5m67")
+theme_override_styles/fill = SubResource("StyleBoxFlat_aknvl")
+max_value = 200.0
+value = 200.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("1_5d2m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(76, 70)
+scale = Vector2(0.676191, 0.647619)
+texture = ExtResource("2_8030f")
+
+[node name="BorderBlack" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(1061.83, 664.743)
+scale = Vector2(8.00958, 32.3956)
+texture = ExtResource("5_xphbj")
+
+[node name="BorderBlack2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(1363.88, 680.869)
+rotation = 1.5708
+scale = Vector2(3.7295, 63.3229)
+texture = ExtResource("5_xphbj")
+
+[node name="Spaceships" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-143.13, 735.219)
+rotation = -3.14159
+scale = Vector2(0.276037, 1.35455)
+texture = ExtResource("4_v1ryy")
+
+[node name="Spaceships2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(1365, 1489.08)
+rotation = 1.5708
+scale = Vector2(0.273526, 3.05965)
+texture = ExtResource("4_v1ryy")
+
+[node name="Spaceships3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(2862.69, 702.573)
+scale = Vector2(0.198007, 1.59928)
+texture = ExtResource("4_v1ryy")
+
+[node name="Spaceships4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(1881.13, -131.242)
+rotation = -1.5708
+scale = Vector2(0.157809, 2.09568)
+texture = ExtResource("4_v1ryy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(76, 104.875)
+scale = Vector2(0.655978, 0.706018)
+texture = ExtResource("3_caba2")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(76.3513, 46)
+rotation = 3.14159
+scale = Vector2(0.66857, 0.835549)
+texture = ExtResource("3_caba2")
+
+[node name="ItsmarsOrbBorder" type="Sprite2D" parent="."]
+position = Vector2(77, 71.75)
+scale = Vector2(0.591304, 0.55)
+texture = ExtResource("4_samgg")
+
+[node name="BorderBlack2" type="Sprite2D" parent="."]
+position = Vector2(402, 71.5)
+scale = Vector2(1, 2.78)
+texture = ExtResource("5_xphbj")
+
+[node name="Panel-transparent-border-024" type="Sprite2D" parent="."]
+position = Vector2(-774, 1189)
+texture = ExtResource("6_yki01")
+
+[node name="ItsmarsOrbBack1" type="Sprite2D" parent="."]
+position = Vector2(274.305, 71)
+rotation = 1.5708
+scale = Vector2(0.624066, 2.32972)
+texture = ExtResource("3_caba2")
+
+[node name="ItsmarsOrbBack2" type="Sprite2D" parent="."]
+position = Vector2(526.864, 70.2298)
+rotation = -1.5708
+scale = Vector2(0.619063, 2.34879)
+texture = ExtResource("3_caba2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 69.0
+offset_right = 607.0
+offset_bottom = 97.0
+text = "SCORE"

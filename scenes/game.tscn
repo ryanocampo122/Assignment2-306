@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7f1k0tsx7cnx"]
+[gd_scene load_steps=13 format=3 uid="uid://7f1k0tsx7cnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ci0lx"]
 [ext_resource type="PackedScene" uid="uid://1wnfmblulhx0" path="res://scenes/player.tscn" id="1_lp7mr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0pr6sltrbqsy" path="res://scenes/player_spawn_area.tscn" id="6_kp4kv"]
 [ext_resource type="AudioStream" uid="uid://ck5yudtb8s054" path="res://assets/audio/sfx_laser1.wav" id="7_ymdea"]
 [ext_resource type="AudioStream" uid="uid://c60lymk20geng" path="res://assets/audio/hit.wav" id="8_p30em"]
+[ext_resource type="PackedScene" uid="uid://bchh760ug2e73" path="res://scenes/healthbar.tscn" id="9_o6ltx"]
 [ext_resource type="AudioStream" uid="uid://dcmdym76082h2" path="res://assets/audio/explode.wav" id="9_x64l8"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ya6y"]
@@ -41,12 +42,14 @@ scale_min = 5.0
 scale_max = 5.0
 
 [node name="Game" type="Node2D"]
+position = Vector2(3, 0)
 script = ExtResource("1_ci0lx")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1806.0
-offset_right = 2007.0
-offset_bottom = 87.0
+offset_left = 1733.0
+offset_top = 54.0
+offset_right = 1991.0
+offset_bottom = 141.0
 theme_override_font_sizes/font_size = 30
 text = "Ryan Ocampo
 ntg051"
@@ -55,10 +58,10 @@ ntg051"
 layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = -658.0
-offset_top = -143.0
-offset_right = 2074.0
-offset_bottom = 1393.0
+offset_left = -716.0
+offset_top = -21.0
+offset_right = 2016.0
+offset_bottom = 1515.0
 texture = ExtResource("2_r5hb3")
 stretch_mode = 3
 
@@ -91,15 +94,13 @@ preprocess = 280.0
 [node name="Lasers" type="Node" parent="."]
 
 [node name="AsteroidRespawnTimer" type="Timer" parent="."]
+wait_time = 0.75
 autostart = true
 
 [node name="Asteroids" type="Node" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("3_6btt6")]
-position = Vector2(-3, 229)
-
-[node name="Asteroid2" parent="Asteroids" instance=ExtResource("3_6btt6")]
-position = Vector2(-1, 835)
+position = Vector2(-496, 454)
 
 [node name="PlayerSpawnPos" type="Node2D" parent="."]
 position = Vector2(1110, 502)
@@ -117,7 +118,12 @@ stream = ExtResource("8_p30em")
 stream = ExtResource("9_x64l8")
 
 [node name="Player" parent="." instance=ExtResource("1_lp7mr")]
-position = Vector2(849, 527)
+position = Vector2(1303, 552)
 rotation = -1.5708
+
+[node name="Healthbar" parent="." instance=ExtResource("9_o6ltx")]
+offset_right = 146.0
+offset_bottom = 137.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="AsteroidRespawnTimer" to="." method="_on_asteroid_respawn_timer_timeout"]

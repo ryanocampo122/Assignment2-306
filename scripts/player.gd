@@ -15,7 +15,7 @@ signal died
 var laser_scene = preload("res://scenes/laser.tscn")
 
 var shoot_cd = false
-var rate_of_fire = 0.10
+var rate_of_fire = 0.25
 
 var alive := true
 

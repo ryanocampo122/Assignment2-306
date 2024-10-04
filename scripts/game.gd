@@ -4,9 +4,10 @@ extends Node2D
 @onready var player = $Player
 @onready var asteroids = $Asteroids
 @onready var asteroid_respawn_timer = $AsteroidRespawnTimer
+@onready var health_bar = $Healthbar
 
 var velocity := Vector2.ZERO
-
+var health = 200
 var asteroid_scene = preload("res://scenes/asteroid.tscn")
 
 func _ready():
@@ -19,7 +20,7 @@ func _process(delta):
 	#for debugging
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
-
+		
 func _on_player_laser_shot(laser):
 	$LaserSound.play()
 	lasers.add_child(laser)
@@ -81,3 +82,10 @@ func _on_asteroid_respawn_timer_timeout() -> void:
 
 	# Defer the addition of the asteroid to the scene (so that it gets added after the current frame ends)
 	asteroids.call_deferred("add_child", new_asteroid)
+	
+# New Function to Update Player Health
+func take_damage(amount: int) -> void:
+	health = clamp(health - amount, 0, 200) 
+	health_bar.value = health                  
+	if health <= 0:
+		get_tree().reload_current_scene()

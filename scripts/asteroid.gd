@@ -19,7 +19,8 @@ var speed := 200
 
 func _ready():
 	rotation = randf_range(0, 2*PI)
-
+	
+	
 	match size:
 		AsteroidSize.LARGE:
 			speed = randf_range(50, 100)
@@ -37,6 +38,7 @@ func _ready():
 func _process(delta: float) -> void:
 	# Update position using linear velocity
 	position += velocity * delta * 5
+	
 	# Rotate without affecting velocity
 	rotation += rotation_speed * delta
 
@@ -69,3 +71,5 @@ func _on_body_entered(body):
 		# Apply a force to the player to reflect their velocity
 		var reflection_force = normal_vector * 300
 		body.velocity += reflection_force
+		
+		get_tree().get_root().get_node("Game").take_damage(20)
