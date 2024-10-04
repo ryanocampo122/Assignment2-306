@@ -5,12 +5,19 @@ extends Node2D
 @onready var asteroids = $Asteroids
 @onready var asteroid_respawn_timer = $AsteroidRespawnTimer
 @onready var health_bar = $Healthbar
+@onready var hud = $UI/HUD
 
 var velocity := Vector2.ZERO
 var health = 200
+var score := 0:
+	set(value):
+		score = value
+		hud.score = score
+
 var asteroid_scene = preload("res://scenes/asteroid.tscn")
 
 func _ready():
+	score = 0
 	player.connect("laser_shot", _on_player_laser_shot)
 	
 	for asteroid in asteroids.get_children():
@@ -25,7 +32,8 @@ func _on_player_laser_shot(laser):
 	$LaserSound.play()
 	lasers.add_child(laser)
 
-func _on_asteroid_exploded(pos, size):
+func _on_asteroid_exploded(pos, size, points):
+	score += points
 	$AsteroidHitSound.play()
 	for i in range(2):
 		match size:

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba1xg11kkw185"]
+
+[ext_resource type="FontFile" uid="uid://bn2lfvm1d51jq" path="res://BungeeTint-Regular.ttf" id="2_y3dcv"]
+
+[sub_resource type="GDScript" id="GDScript_l17yr"]
+script/source = "extends Control
+
+@onready var score = $Score:
+	set(value):
+		score.text = value
+		
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_rh7ui"]
+font = ExtResource("2_y3dcv")
+font_size = 50
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_l17yr")
+
+[node name="score" type="Label" parent="HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "9999"
+label_settings = SubResource("LabelSettings_rh7ui")

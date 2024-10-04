@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7f1k0tsx7cnx"]
+[gd_scene load_steps=14 format=3 uid="uid://7f1k0tsx7cnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ci0lx"]
 [ext_resource type="PackedScene" uid="uid://1wnfmblulhx0" path="res://scenes/player.tscn" id="1_lp7mr"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c60lymk20geng" path="res://assets/audio/hit.wav" id="8_p30em"]
 [ext_resource type="PackedScene" uid="uid://bchh760ug2e73" path="res://scenes/healthbar.tscn" id="9_o6ltx"]
 [ext_resource type="AudioStream" uid="uid://dcmdym76082h2" path="res://assets/audio/explode.wav" id="9_x64l8"]
+[ext_resource type="PackedScene" uid="uid://cnqlw30adoxdq" path="res://scenes/hud.tscn" id="10_s2345"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ya6y"]
 particle_flag_disable_z = true
@@ -45,23 +46,14 @@ scale_max = 5.0
 position = Vector2(3, 0)
 script = ExtResource("1_ci0lx")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1733.0
-offset_top = 54.0
-offset_right = 1991.0
-offset_bottom = 141.0
-theme_override_font_sizes/font_size = 30
-text = "Ryan Ocampo
-ntg051"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = -716.0
-offset_top = -21.0
-offset_right = 2016.0
-offset_bottom = 1515.0
+offset_left = -933.0
+offset_top = -395.0
+offset_right = 2433.0
+offset_bottom = 1141.0
 texture = ExtResource("2_r5hb3")
 stretch_mode = 3
 
@@ -122,8 +114,15 @@ position = Vector2(1303, 552)
 rotation = -1.5708
 
 [node name="Healthbar" parent="." instance=ExtResource("9_o6ltx")]
-offset_right = 146.0
-offset_bottom = 137.0
-metadata/_edit_use_anchors_ = true
+offset_right = 158.0
+offset_bottom = 140.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("10_s2345")]
+offset_left = 138.0
+offset_top = 15.0
+offset_right = 178.0
+offset_bottom = 55.0
 
 [connection signal="timeout" from="AsteroidRespawnTimer" to="." method="_on_asteroid_respawn_timer_timeout"]

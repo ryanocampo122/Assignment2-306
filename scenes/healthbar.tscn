@@ -9,17 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://cc24hyhqtl4vv" path="res://assets/kenney_fantasy-ui-borders/PNG/Default/Transparent border/panel-transparent-border-024.png" id="6_yki01"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5m67"]
-bg_color = Color(0.0255833, 0.00724714, 0.0155105, 1)
+bg_color = Color(0.266272, 0.643305, 0.838594, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aknvl"]
-bg_color = Color(0.584314, 0, 0, 1)
+bg_color = Color(0.991222, 0.00471672, 0.0992918, 1)
 
 [node name="Healthbar" type="ProgressBar"]
 z_index = 1
-offset_left = -5.0
+offset_left = -11.0
 offset_top = -1.0
 offset_right = 147.0
-offset_bottom = 132.0
+offset_bottom = 121.0
 theme_override_styles/background = SubResource("StyleBoxFlat_v5m67")
 theme_override_styles/fill = SubResource("StyleBoxFlat_aknvl")
 max_value = 200.0
@@ -62,9 +62,9 @@ scale = Vector2(0.198007, 1.59928)
 texture = ExtResource("4_v1ryy")
 
 [node name="Spaceships4" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(1881.13, -131.242)
+position = Vector2(1881.73, -118.728)
 rotation = -1.5708
-scale = Vector2(0.157809, 2.09568)
+scale = Vector2(0.206692, 2.09451)
 texture = ExtResource("4_v1ryy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
@@ -105,11 +105,3 @@ position = Vector2(526.864, 70.2298)
 rotation = -1.5708
 scale = Vector2(0.619063, 2.34879)
 texture = ExtResource("3_caba2")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 69.0
-offset_right = 607.0
-offset_bottom = 97.0
-text = "SCORE"
