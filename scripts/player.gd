@@ -15,7 +15,7 @@ signal died
 var laser_scene = preload("res://scenes/laser.tscn")
 
 var shoot_cd = false
-var rate_of_fire = 0.20
+var rate_of_fire = 0.10
 
 var alive := true
 
@@ -81,5 +81,5 @@ func _on_body_entered(body):
 		velocity = velocity.bounce(normal_vector)
 		
 		# Apply a force to the asteroid to reflect its movement vector
-		var reflection_force = normal_vector * 300
+		var reflection_force = normal_vector * 200  
 		body.movement_vector += reflection_force
