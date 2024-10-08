@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bnx5migy2pb3u"
+path="res://.godot/imported/space shield sounds - 2.wav-2be407a7397a1848cd41699c65193969.sample"
+
+[deps]
+
+source_file="res://assets/textures/HP/Borders/itsmars Health Orb/space shield sounds/space shield sounds - 2.wav"
+dest_files=["res://.godot/imported/space shield sounds - 2.wav-2be407a7397a1848cd41699c65193969.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

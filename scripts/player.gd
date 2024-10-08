@@ -73,6 +73,7 @@ func shoot_laser():
 	velocity -= recoil_force
 	
 func _on_body_entered(body):
+	$ShieldHit.play()
 	if body is Asteroid:
 		# Calculate the normal vector based on the collision point
 		var normal_vector = (body.global_position - global_position).normalized()

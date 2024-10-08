@@ -20,6 +20,7 @@ offset_left = 187.0
 offset_top = 6.0
 offset_right = 409.0
 offset_bottom = 112.0
-text = "9999
+text = "0
 "
 label_settings = SubResource("LabelSettings_dgc38")
+horizontal_alignment = 1

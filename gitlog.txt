@@ -1,0 +1,119 @@
+commit 28d6217e86c21a63d12c5fc43ac8dea2955e48f1
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Fri Oct 4 03:09:38 2024 -0600
+
+    added scoring system
+
+commit 091945f1f9f00071ea310da5b2dc9407dfc6016a
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Fri Oct 4 01:46:12 2024 -0600
+
+    added score, health bar, and fframe
+
+commit 45810b2ae203bfecf17c92ccad6a0470582d6f04
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Thu Oct 3 21:05:54 2024 -0600
+
+    ok this is awesome
+
+commit e01ead7555e6a38dee4cb1d0cc6e3eba9737e08a
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Thu Oct 3 16:30:40 2024 -0600
+
+    asteroid and player bounce off each other
+
+commit a3c5eb2b4a7c724aed4621eea1458fba85219b7d
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Thu Oct 3 15:28:36 2024 -0600
+
+    asteroids spawn periodically, outside of screen, and have different sizes
+
+commit 46107ba34a2f2e77c9030258a5f408ee31a47f37
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Wed Oct 2 22:51:50 2024 -0600
+
+    Asteroids now break after collidng with laser and multiply into smaller pieces
+
+commit f6e7b67fc9887a7e53a4b989419e98d6f6a91e0a
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Wed Oct 2 21:31:58 2024 -0600
+
+    Fixed bug where player sprite went infinetly fast
+
+commit bd0aa314830abb636178cb601a0d978a348988a5
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Wed Oct 2 21:26:40 2024 -0600
+
+    restructed files
+
+commit 64362b6102d5916c74b574e3e4fbcea0cbbe225e
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Wed Oct 2 20:47:51 2024 -0600
+
+    test push, tweaked git configs
+
+commit bf9c5fe2add5495a538322db35bcfec847a9a953
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Wed Oct 2 13:04:33 2024 -0600
+
+    randomized asteroid rotation
+
+commit 59e09ca9eb39b0adb24b1ee56174d1167b37cf88
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Tue Oct 1 20:05:21 2024 -0600
+
+    added asteroids scene and asset
+
+commit 7e988f18018436dac9b4fc6a18d7c558810fc46f
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Tue Oct 1 17:43:34 2024 -0600
+
+    ship shoots laser and is recoiled backwards
+
+commit 5f128e5ffdb0fc85465ae3b1a85e0b70d3448731
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Tue Oct 1 16:00:14 2024 -0600
+
+    added logic to delete bullet when exiting screen and created physics layer: world, player, asteroid, porjectile
+
+commit 62350a293f33d38ec262f692abc8766803f18895
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Tue Oct 1 15:42:05 2024 -0600
+
+    removed backward forward action, added laser assest, and created laser scene
+
+commit 1938e9fc0420f6c4080922f3fe447993daed35fd
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Mon Sep 30 20:19:38 2024 -0600
+
+    added input actions for player sprite, and created script for charbody
+
+commit 92d43956384028aab7820d8e2536953697107322
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Mon Sep 30 20:10:37 2024 -0600
+
+    Added scripts folder
+
+commit ae07e6ab4a7204ef8e1ffc98ba6553fa5ded3bbd
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Mon Sep 30 19:30:49 2024 -0600
+
+    added assets, and created sprite
+
+commit 2667416bc96fa07ec164a9e9603e6ae3041cbfe9
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Mon Sep 30 18:53:32 2024 -0600
+
+    added game scene
+
+commit 7d647ee501aff8c6cb651b19088ba4cacb405d4f
+Author: Ryan Ocampo <rjocampo183@yahoo.com>
+Date:   Wed Sep 25 16:33:27 2024 -0600
+
+    Initial Commit for Assignment2
+
+commit 1f3e9e0e2859ce9dc0083dcdcf055943761e29fa
+Author: ryan ocampo <123909119+ryanocampo122@users.noreply.github.com>
+Date:   Wed Sep 25 16:26:15 2024 -0600
+
+    Initial commit

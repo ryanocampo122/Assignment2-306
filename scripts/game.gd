@@ -93,7 +93,9 @@ func _on_asteroid_respawn_timer_timeout() -> void:
 	
 # New Function to Update Player Health
 func take_damage(amount: int) -> void:
+	$PlayerHit.play()
 	health = clamp(health - amount, 0, 200) 
 	health_bar.value = health                  
 	if health <= 0:
+		$PlayerDieSound.play()
 		get_tree().reload_current_scene()

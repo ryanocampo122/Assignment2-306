@@ -19,7 +19,7 @@ z_index = 1
 offset_left = -11.0
 offset_top = -1.0
 offset_right = 147.0
-offset_bottom = 121.0
+offset_bottom = 133.0
 theme_override_styles/background = SubResource("StyleBoxFlat_v5m67")
 theme_override_styles/fill = SubResource("StyleBoxFlat_aknvl")
 max_value = 200.0
@@ -29,8 +29,8 @@ show_percentage = false
 script = ExtResource("1_5d2m1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(76, 70)
-scale = Vector2(0.676191, 0.647619)
+position = Vector2(76, 71.5)
+scale = Vector2(0.676191, 0.661905)
 texture = ExtResource("2_8030f")
 
 [node name="BorderBlack" type="Sprite2D" parent="Sprite2D"]
@@ -45,13 +45,13 @@ scale = Vector2(3.7295, 63.3229)
 texture = ExtResource("5_xphbj")
 
 [node name="Spaceships" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(-143.13, 735.219)
+position = Vector2(-126.999, 735.219)
 rotation = -3.14159
-scale = Vector2(0.276037, 1.35455)
+scale = Vector2(0.33905, 1.35455)
 texture = ExtResource("4_v1ryy")
 
 [node name="Spaceships2" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(1365, 1489.08)
+position = Vector2(1367.96, 1449.6)
 rotation = 1.5708
 scale = Vector2(0.273526, 3.05965)
 texture = ExtResource("4_v1ryy")
@@ -67,11 +67,21 @@ rotation = -1.5708
 scale = Vector2(0.206692, 2.09451)
 texture = ExtResource("4_v1ryy")
 
+[node name="BorderBlack3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(480.634, -1627.5)
+scale = Vector2(1.36366, 68.721)
+texture = ExtResource("5_xphbj")
+
+[node name="BorderBlack4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(452.535, -552.794)
+scale = Vector2(1, 22.0066)
+texture = ExtResource("5_xphbj")
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(76, 104.875)
-scale = Vector2(0.655978, 0.706018)
+position = Vector2(75.7187, 105.375)
+scale = Vector2(0.658424, 0.715278)
 texture = ExtResource("3_caba2")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
@@ -81,8 +91,8 @@ scale = Vector2(0.66857, 0.835549)
 texture = ExtResource("3_caba2")
 
 [node name="ItsmarsOrbBorder" type="Sprite2D" parent="."]
-position = Vector2(77, 71.75)
-scale = Vector2(0.591304, 0.55)
+position = Vector2(76, 74)
+scale = Vector2(0.617391, 0.55)
 texture = ExtResource("4_samgg")
 
 [node name="BorderBlack2" type="Sprite2D" parent="."]
@@ -105,3 +115,13 @@ position = Vector2(526.864, 70.2298)
 rotation = -1.5708
 scale = Vector2(0.619063, 2.34879)
 texture = ExtResource("3_caba2")
+
+[node name="ItsmarsOrbBorder2" type="Sprite2D" parent="."]
+position = Vector2(396, 72)
+scale = Vector2(2.11304, 0.604348)
+texture = ExtResource("4_samgg")
+
+[node name="ItsmarsOrbShadow" type="Sprite2D" parent="."]
+position = Vector2(385.75, 73.5)
+scale = Vector2(2.20238, 0.62381)
+texture = ExtResource("2_8030f")
